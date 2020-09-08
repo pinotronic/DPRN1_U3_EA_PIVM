@@ -1,0 +1,4 @@
+C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.csprojAssemblyReference.cache
+C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfoInputs.cache
+C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfo.cs
+C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.csproj.CoreCompileInputs.cache
