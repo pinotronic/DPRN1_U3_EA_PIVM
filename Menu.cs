@@ -13,8 +13,8 @@ namespace DPRN1_U3_EA_PIVM
             Console.WriteLine("  ███                                                                                                              ███    ");
             Console.WriteLine("  ███                                        Taquilla Auditorio Nacional                                           ███    ");
             Console.WriteLine("  ███                                                                                                              ███    ");
-            Console.WriteLine("  ███                                              1.-REGITRAR Eventos                                          ███    ");
-            Console.WriteLine("  ███                                              2.-MOSTRAR Eventos                                           ███    ");
+            Console.WriteLine("  ███                                              1.-REGITRAR Eventos                                             ███    ");
+            Console.WriteLine("  ███                                              2.-MOSTRAR Eventos                                              ███    ");
             Console.WriteLine("  ███                                              3.-CAJA                                                         ███    ");
             Console.WriteLine("  ███                                              4.-MOSTRAR VENTAS                                               ███    ");
             Console.WriteLine("  ███                                              5.-SALIR                                                        ███    ");

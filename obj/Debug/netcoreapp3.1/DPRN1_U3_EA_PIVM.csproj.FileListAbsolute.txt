@@ -2,3 +2,16 @@ C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_
 C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfoInputs.cache
 C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfo.cs
 C:\Users\Pinotronic\source\repos\DPRN1_U3_EA_PIVM\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.csproj.CoreCompileInputs.cache
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.exe
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.deps.json
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.runtimeconfig.json
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.runtimeconfig.dev.json
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.dll
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\bin\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.pdb
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.csprojAssemblyReference.cache
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfoInputs.cache
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.AssemblyInfo.cs
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.csproj.CoreCompileInputs.cache
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.dll
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.pdb
+C:\Users\pinotronic\source\repos\DPRN1_U3_EA_PIVM-master\obj\Debug\netcoreapp3.1\DPRN1_U3_EA_PIVM.genruntimeconfig.cache
