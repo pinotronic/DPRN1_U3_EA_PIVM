@@ -12,6 +12,7 @@ namespace DPRN1_U3_EA_PIVM
         private List<Eventos> listEventos;
         private List<Ventas> listVentas;
         private List<Contenidos> listContenido;
+        private List<Boleto> listBoleto;
 
         private Eventos eventos;
         private Ventas ventas;
@@ -139,7 +140,31 @@ namespace DPRN1_U3_EA_PIVM
         }
         public void Ventanilla()
         {
+
             Ventas venta = new Ventas();
+            Boleto boleto = new Boleto();
+
+            boleto.Localidad = "Preferente";
+            boleto.Precio = 2000;
+            boleto.NoBoleto = 2000;
+            listBoleto.Add(boleto);
+            boleto.Localidad = "Cresta";
+            boleto.Precio = 1500;
+            boleto.NoBoleto = 3000;
+            listBoleto.Add(boleto);
+            boleto.Localidad = "Luneta";
+            boleto.Precio = 1200;
+            boleto.NoBoleto = 5000;
+            listBoleto.Add(boleto);
+            boleto.Localidad = "Balcon";
+            boleto.Precio = 900;
+            boleto.NoBoleto = 4000;
+            listBoleto.Add(boleto);
+            boleto.Localidad = "PrimerPiso";
+            boleto.Precio = 700;
+            boleto.NoBoleto = 8000;
+            listBoleto.Add(boleto);
+
             Contenidos contenido = new Contenidos();
             int folio = 0;
             int subtotal = 0;
@@ -153,15 +178,21 @@ namespace DPRN1_U3_EA_PIVM
             MostrarEventos();
 
             //Seleccion de Evento
-            Console.WriteLine("\nSeleccione el Id. de un articulo:");
+            Console.WriteLine("\nSeleccione el Id. de un Evento:");
             int idEvento = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Cantidad");
             int cantidad = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("Tipo de Boleto 1. Preferente, 2. Cresta, 3. Luneta, 4. Balcon, 5. Primer Piso");
+
+            int tipoBoleto = int.Parse(Console.ReadLine());
+
+            (int Precio,int NomeroBoletos) = BuscarCostoBoleto(tipoBoleto);
+
             (string DescripcionArticulo, int costo) = BuscandoEventos(idEvento);
 
-            int costoSuma = costo * cantidad;
+            int costoSuma = Precio * cantidad;
 
             Console.WriteLine("Id.  Descripcion                   Cantidad       Costo.");
             Console.WriteLine(idEvento + " " + DescripcionArticulo + "                        " + cantidad + "         " + costoSuma);
@@ -272,6 +303,72 @@ namespace DPRN1_U3_EA_PIVM
         public void Calulando(int Subtotal)
         {
 
+            //Preferente = ~2000 b = 2000
+            int descuento = 0;
+            //Compra menor $1000 no aplica descuento 0 %
+            if (Subtotal < 1000)
+            {
+                descuento = 0;
+            }
+            //Compra mayor o igual que $1000 y menor o igual que $2500 – descuento 10 %
+            if (Subtotal >= 1000 && Subtotal <= 2500)
+            {
+                descuento = 10;
+            }
+            //Compra mayor que $2500 y menor o igual que $5000 - descuento 15 %
+            if (Subtotal >= 2500 && Subtotal <= 5000)
+            {
+                descuento = 15;
+            }
+            //Compra mayor que $5000 – descuento 20 %
+            if (Subtotal > 5000)
+            {
+                descuento = 20;
+            }
+            Console.WriteLine(" Subtotal: " + Subtotal);
+            Console.WriteLine("Descuento: " + descuento);
+            int total = Subtotal - (descuento / 100);
+            Console.WriteLine("---------------");
+            Console.WriteLine("    Total: " + total);
+
+            Console.WriteLine("Gracias por su compra");
+            Console.ReadKey();
+        }
+  
+        public Tuple<int, int> BuscarCostoBoleto(int TipoBoleto)
+        {
+            int CostoBoleto = 0;
+            int NumBoletos = 0;
+            String Tipo = "";
+            switch (TipoBoleto)
+            {
+                case 1:
+                    Tipo = "Preferente";
+                    break;
+                case 2:
+                    Tipo = "Cresta";
+                    break;
+                case 3:
+                    Tipo = "Luneta";
+                    break;
+                case 4;
+                    Tipo = "Balcon";
+                    break;
+                case 5;
+                    Tipo = "PrimerPiso";
+                    break;
+            }
+
+
+            foreach (Boleto b in listBoleto)
+            {
+                if (b.Localidad == Tipo)
+                {
+                    CostoBoleto = b.Precio;
+                    NumBoletos = b.NoBoleto;
+                }
+            }
+            return new Tuple<int, int>(CostoBoleto, NumBoletos);
         }
         // PRESENTAR MENU DE BIENVENIDA
 

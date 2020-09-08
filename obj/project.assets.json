@@ -8,20 +8,25 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\pinotronic\\.nuget\\packages\\": {}
+    "C:\\Users\\Pinotronic\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM-master\\DPRN1_U3_EA_PIVM.csproj",
+      "projectUniqueName": "C:\\Users\\Pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM\\DPRN1_U3_EA_PIVM.csproj",
       "projectName": "DPRN1_U3_EA_PIVM",
-      "projectPath": "C:\\Users\\pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM-master\\DPRN1_U3_EA_PIVM.csproj",
-      "packagesPath": "C:\\Users\\pinotronic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM-master\\obj\\",
+      "projectPath": "C:\\Users\\Pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM\\DPRN1_U3_EA_PIVM.csproj",
+      "packagesPath": "C:\\Users\\Pinotronic\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pinotronic\\source\\repos\\DPRN1_U3_EA_PIVM\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pinotronic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Pinotronic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
