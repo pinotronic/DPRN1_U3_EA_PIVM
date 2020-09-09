@@ -26,8 +26,9 @@ namespace DPRN1_U3_EA_PIVM
             listVentas = new List<Ventas>();
             listEventos = new List<Eventos>();
             listContenido = new List<Contenidos>();
+            listBoleto= new List<Boleto>();
 
-            int opcion;
+        int opcion;
 
             datoVentas = new Dato("Ventas.bd");
             datoEventos = new Dato("Eventos.bd");
@@ -134,7 +135,7 @@ namespace DPRN1_U3_EA_PIVM
             Console.WriteLine("\nListado de Articulos");
             foreach (Eventos b in listEventos)
             {
-                Console.WriteLine("Id: " + b.IdEvento+ " Descripcion: " + b.Descripcion + " Precio $" + b.Costo);
+                Console.WriteLine("Id: " + b.IdEvento+ " Descripcion: " + b.Descripcion );
 
             }
         }
@@ -142,28 +143,32 @@ namespace DPRN1_U3_EA_PIVM
         {
 
             Ventas venta = new Ventas();
-            Boleto boleto = new Boleto();
 
-            boleto.Localidad = "Preferente";
-            boleto.Precio = 2000;
-            boleto.NoBoleto = 2000;
-            listBoleto.Add(boleto);
-            boleto.Localidad = "Cresta";
-            boleto.Precio = 1500;
-            boleto.NoBoleto = 3000;
-            listBoleto.Add(boleto);
-            boleto.Localidad = "Luneta";
-            boleto.Precio = 1200;
-            boleto.NoBoleto = 5000;
-            listBoleto.Add(boleto);
-            boleto.Localidad = "Balcon";
-            boleto.Precio = 900;
-            boleto.NoBoleto = 4000;
-            listBoleto.Add(boleto);
-            boleto.Localidad = "PrimerPiso";
-            boleto.Precio = 700;
-            boleto.NoBoleto = 8000;
-            listBoleto.Add(boleto);
+
+            string Localidad = "Preferente";
+            int PrecioBoleto = 2000;
+            int NoBoleto = 2000;
+            creacionBoleto(Localidad, PrecioBoleto, NoBoleto);
+
+            Localidad = "Cresta";
+            PrecioBoleto = 1500;
+            NoBoleto = 3000;
+            creacionBoleto(Localidad, PrecioBoleto, NoBoleto);
+
+            Localidad = "Luneta";
+            PrecioBoleto = 1200;
+            NoBoleto = 5000;
+            creacionBoleto(Localidad, PrecioBoleto, NoBoleto);
+
+            Localidad = "Balcon";
+            PrecioBoleto = 900;
+            NoBoleto = 4000;
+            creacionBoleto(Localidad, PrecioBoleto, NoBoleto);
+
+            Localidad = "PrimerPiso";
+            PrecioBoleto = 700;
+            NoBoleto = 8000;
+            creacionBoleto(Localidad, PrecioBoleto, NoBoleto);
 
             Contenidos contenido = new Contenidos();
             int folio = 0;
@@ -351,10 +356,10 @@ namespace DPRN1_U3_EA_PIVM
                 case 3:
                     Tipo = "Luneta";
                     break;
-                case 4;
+                case 4:
                     Tipo = "Balcon";
                     break;
-                case 5;
+                case 5:
                     Tipo = "PrimerPiso";
                     break;
             }
@@ -369,6 +374,14 @@ namespace DPRN1_U3_EA_PIVM
                 }
             }
             return new Tuple<int, int>(CostoBoleto, NumBoletos);
+        }
+        public void creacionBoleto(String Localidad, int Precio, int NoBoleto)
+        {
+            Boleto boleto = new Boleto();
+            boleto.Localidad = Localidad;
+            boleto.Precio = Precio;
+            boleto.NoBoleto = NoBoleto;
+            listBoleto.Add(boleto);
         }
         // PRESENTAR MENU DE BIENVENIDA
 
