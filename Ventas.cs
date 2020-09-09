@@ -9,13 +9,15 @@ namespace DPRN1_U3_EA_PIVM
 
         private int _idVenta;
         private int _numEvento;
-        private DateTime _fecha;
         private int _montoFactura;
+        private DateTime _fecha;
+
 
         public int IdVenta { get => _idVenta; set => _idVenta = value; }
         public int NumEvento { get => _numEvento; set => _numEvento = value; }
+        public int MontoFactura { get => _montoFactura; set => _montoFactura = value; }
         public DateTime Fecha { get => _fecha; set => _fecha = value; }
-        private int MontoFactura { get => _montoFactura; set => _montoFactura = value; }
+
     }
     
 }

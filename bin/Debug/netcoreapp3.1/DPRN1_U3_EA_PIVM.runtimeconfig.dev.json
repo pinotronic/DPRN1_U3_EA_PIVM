@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\Pinotronic\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Pinotronic\\.nuget\\packages",
-      "D:\\Microsoft\\Xamarin\\NuGet"
+      "C:\\Users\\pinotronic\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\pinotronic\\.nuget\\packages"
     ]
   }
 }

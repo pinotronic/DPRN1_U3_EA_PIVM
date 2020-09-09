@@ -26,9 +26,9 @@ namespace DPRN1_U3_EA_PIVM
             listVentas = new List<Ventas>();
             listEventos = new List<Eventos>();
             listContenido = new List<Contenidos>();
-            listBoleto= new List<Boleto>();
+            listBoleto = new List<Boleto>();
 
-        int opcion;
+            int opcion;
 
             datoVentas = new Dato("Ventas.bd");
             datoEventos = new Dato("Eventos.bd");
@@ -50,7 +50,7 @@ namespace DPRN1_U3_EA_PIVM
                     }
                     if (File.Exists("Contenido.db"))
                     {
-                        listContenido= datoContenido.deserializarContenido();
+                        listContenido = datoContenido.deserializarContenido();
                         Console.WriteLine("Hay Contenido ");
                     }
 
@@ -87,6 +87,9 @@ namespace DPRN1_U3_EA_PIVM
                         break;
                     case 4:
                         // Mostrar Ventas
+                        Console.Clear();
+                        MostrarVentas();
+                        menu.Menu2();
                         break;
                     case 5:
                         // Salir
@@ -97,11 +100,10 @@ namespace DPRN1_U3_EA_PIVM
 
             } while (opcion != 5);
         }
-
         public void RegistroEventos()
         {
             menu.Menu2();
-            
+
             Eventos evento = new Eventos();
 
             int id = ContadorEventos() + 1;
@@ -131,11 +133,11 @@ namespace DPRN1_U3_EA_PIVM
         }
         public void MostrarEventos()
         {
-            
+
             Console.WriteLine("\nListado de Articulos");
             foreach (Eventos b in listEventos)
             {
-                Console.WriteLine("Id: " + b.IdEvento+ " Descripcion: " + b.Descripcion );
+                Console.WriteLine("Id: " + b.IdEvento + " Descripcion: " + b.Descripcion);
 
             }
         }
@@ -193,7 +195,7 @@ namespace DPRN1_U3_EA_PIVM
 
             int tipoBoleto = int.Parse(Console.ReadLine());
 
-            (int Precio,int NomeroBoletos) = BuscarCostoBoleto(tipoBoleto);
+            (int Precio, int NomeroBoletos) = BuscarCostoBoleto(tipoBoleto);
 
             (string DescripcionArticulo, int costo) = BuscandoEventos(idEvento);
 
@@ -222,6 +224,7 @@ namespace DPRN1_U3_EA_PIVM
                     Console.WriteLine("\n Los datos fueron Guardados");
                 }
             } while (opcion < 1 || opcion > 2);
+
             Console.WriteLine("Presione una tecla");
             Console.ReadKey();
             Console.Clear();
@@ -239,9 +242,11 @@ namespace DPRN1_U3_EA_PIVM
                 if (opcion == 1)
                 {
                     Calulando(subtotal);
-                    venta.NumEvento = contador;
-                    listVentas.Add(ventas);
+                    venta.NumEvento = costoSuma;
                     subtotal = subtotal + costo;
+                    venta.MontoFactura = subtotal;
+
+                    listVentas.Add(ventas);
                     datoVentas.serializarVentas(listVentas);
                     Console.WriteLine("\n Los datos fueron Guardados");
                 }
@@ -252,7 +257,6 @@ namespace DPRN1_U3_EA_PIVM
                 }
             } while (opcion < 1 || opcion > 2);
         }
-
         public int ContadorVenta()
         {
             int ContadorVenta = 0;
@@ -262,7 +266,6 @@ namespace DPRN1_U3_EA_PIVM
             }
             return ContadorVenta;
         }
-
         public Tuple<string, int> BuscandoEventos(int idEvento)
         {
 
@@ -308,38 +311,13 @@ namespace DPRN1_U3_EA_PIVM
         public void Calulando(int Subtotal)
         {
 
-            //Preferente = ~2000 b = 2000
-            int descuento = 0;
-            //Compra menor $1000 no aplica descuento 0 %
-            if (Subtotal < 1000)
-            {
-                descuento = 0;
-            }
-            //Compra mayor o igual que $1000 y menor o igual que $2500 – descuento 10 %
-            if (Subtotal >= 1000 && Subtotal <= 2500)
-            {
-                descuento = 10;
-            }
-            //Compra mayor que $2500 y menor o igual que $5000 - descuento 15 %
-            if (Subtotal >= 2500 && Subtotal <= 5000)
-            {
-                descuento = 15;
-            }
-            //Compra mayor que $5000 – descuento 20 %
-            if (Subtotal > 5000)
-            {
-                descuento = 20;
-            }
-            Console.WriteLine(" Subtotal: " + Subtotal);
-            Console.WriteLine("Descuento: " + descuento);
-            int total = Subtotal - (descuento / 100);
-            Console.WriteLine("---------------");
-            Console.WriteLine("    Total: " + total);
+            Console.WriteLine("\n               Subtotal: " + Subtotal);
+            Console.WriteLine("                          ---------------");
+            Console.WriteLine("                       Total: " + Subtotal);
 
-            Console.WriteLine("Gracias por su compra");
+            Console.WriteLine("\n Gracias por su compra");
             Console.ReadKey();
         }
-  
         public Tuple<int, int> BuscarCostoBoleto(int TipoBoleto)
         {
             int CostoBoleto = 0;
@@ -383,30 +361,15 @@ namespace DPRN1_U3_EA_PIVM
             boleto.NoBoleto = NoBoleto;
             listBoleto.Add(boleto);
         }
-        // PRESENTAR MENU DE BIENVENIDA
+        public void MostrarVentas()
+        {
+            Console.WriteLine("\nListado de Ventas");
+            foreach (Ventas b in listVentas)
+            {
+                Console.WriteLine("Id: " + b.IdVenta + " Descripcion: " + b.NumEvento + " Ventas" + b.Fecha);
 
-        /*Una empresa dedicada a la venta de localidades por teléfono e internet maneja cinco tipos de localidades 
-         * para un concierto que se llevará en el Auditorio Nacional de la Ciudad de México. */
-        /*Los precios de cada localidad y los datos referentes a la venta de boletos para la próxima función se 
-        * manejan de la siguiente forma:*/
-
-        /*Tener activo el programa y solicitar al usuario, si desea realizar una compra:
-
-        Si la respuesta es “si”: solicitar la localidad y el número de boletos para calcular el monto de la compra 
-        (punto 1) y mostrar los datos introducidos y el monto a pagar. 
-
-        Una vez que oprima una tecla para continuar, regresar nuevamente a solicitar una compra.
-
-        Si la respuesta es “no”: mostrar los datos que se te piden calcular punto 2 y 3, terminar el programa.
-
-        Analiza la problemática que se te expone e identifica las clases, objetos y estructuras de control
-        selectivas y cíclicas requeridas para su resolución.
-
-        */
-
-        //CALCULOS
-        /*1. El monto correspondiente de cada venta.
-        2. Obtenga el número de boletos vendidos y total para cada una de las localidades.
-        3. Obtenga la recaudación total.*/
+            }
+            Console.ReadKey();
+        }
     }
 }
